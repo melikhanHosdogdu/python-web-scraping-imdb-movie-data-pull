@@ -28,7 +28,15 @@ class Film:
             self.duration += 10 * hour[1]
             self.duration += hour[2]
 
+from google.colab import auth
+auth.authenticate_user()
 
+import gspread
+from oauth2client.client import GoogleCredentials
+
+
+import requests
+from bs4 import BeautifulSoup as bs
 
 total_film_count = 9751
 
@@ -56,21 +64,9 @@ for name in link_list_250:
     for link in film_link:
         film_links.append(link.find("a").get("href"))
 
-
-from google.colab import auth
-auth.authenticate_user()
-
-import gspread
-from oauth2client.client import GoogleCredentials
-
 gc = gspread.authorize(GoogleCredentials.get_application_default())
 
 sh = gc.create('Imdb Film Datas')
-
-
-
-import requests
-from bs4 import BeautifulSoup as bs
 
 print("="*20)
 print(len(film_links))
