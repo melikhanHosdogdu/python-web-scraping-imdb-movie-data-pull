@@ -1,4 +1,4 @@
-# python-web-scraping-imdb-movie-data-pull
+# Python Web Scraping iMDB Movie Data Pull
 In this project you will find a code that provide movies data to you
 
 I have used Google Colab and Google Sheets for more power. 
